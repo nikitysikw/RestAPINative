@@ -2,9 +2,9 @@
 class Database {
 
     private $host = "127.0.0.1";
-    private $login = "api_test";
-    private $password = "api_test";
-    private $db_name = "api_test";
+    private $login = "apisite";
+    private $password = "apisite";
+    private $db_name = "apisite";
     private $port = 3306;
     public $conn;
 
@@ -19,5 +19,10 @@ class Database {
     }
         return $this->conn;
     }
+
+	function __destruct()
+	{
+		$this->conn->close();
+	}
 
 }
